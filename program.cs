@@ -7,8 +7,7 @@ namespace ss.week3.math
     {
         double apply(double x);
         Function derivative();
-        
-         string toString();
+        string toString();
         
     }
 
@@ -41,25 +40,15 @@ namespace ss.week3.math
             return x.ToString();
         }
 
-
-
-
-
-
     }
+
 
     class Identity : Function
     {
-        
-        
-
-        
-
+          
         public double apply(double x)
-        {
-            
+        {  
             return x;
-
         }
 
         public Function derivative()
@@ -73,7 +62,7 @@ namespace ss.week3.math
         }
 
     }
-
+    
     class Sum : Function
     {
         Function g;
@@ -81,25 +70,19 @@ namespace ss.week3.math
         public Sum(Function x, Function y)
         {
             this.g = x;
-            this.h = y;
-
-            
-        
+            this.h = y;    
         }
-
-    
+        
         public Function derivative()
         {
             return new Sum(g.derivative(),h.derivative());
         }
 
-
         public double apply(double x)
         {
             return g.apply(x) + h.apply(x);
         }
-
-
+        
         public string toString()
         {
             return String.Format("{0} + {1}",g.toString(),h.toString());
@@ -120,15 +103,9 @@ namespace ss.week3.math
 
         public Function derivative()
         {
-            
             return new Sum(new Product(g.derivative(),h),new Product(h.derivative(),g));
-
         }
-
-    
-
-
-
+        
         public double apply(double x)
         {
             return g.apply(x)*h.apply(x);
@@ -136,11 +113,8 @@ namespace ss.week3.math
 
         public string toString()
         {
-            return String.Format("{0} * {1}",g.toString(),h.toString());
+            return String.Format("{{0}} * {{1}}",g.toString(),h.toString());
         }
-
-
-
 
     }
 
@@ -148,8 +122,9 @@ namespace ss.week3.math
     class Exponent : Function
     {
         //imnplements x^n
-
-        double expon;
+       
+       double expon;
+       
        public Exponent(double exp)
         {
             this.expon = exp;
@@ -175,17 +150,11 @@ namespace ss.week3.math
         }
 
 
-
-
     }
-
-
 
 
     class Program 
     {
-
-
         static void Main(string[] args)
         {
            
