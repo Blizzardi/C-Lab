@@ -11,9 +11,6 @@ namespace ss.week3.math
         
     }
 
-
-
-
     class Constant : Function
     {
         public double x;
@@ -98,7 +95,7 @@ namespace ss.week3.math
         public Product(Function x, Function y)
         {
             this.g = x;
-            this.h = x;
+            this.h = y;
         }
 
         public Function derivative()
@@ -146,7 +143,7 @@ namespace ss.week3.math
 
         public String toString()
         {
-            return expon.ToString();
+            return "x^"+expon.ToString();
         }
 
 
