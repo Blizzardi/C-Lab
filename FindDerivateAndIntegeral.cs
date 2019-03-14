@@ -238,7 +238,7 @@ namespace ss.week3.math
            Integrable f5 = new Sum(new LinearProduct((3.0), new Exponent(2)),new LinearProduct((2.0), new Identity()));
            Console.WriteLine(f1);
            Console.WriteLine(f1.toString());
-           //Console.WriteLine();
+           
            Console.WriteLine(f1.derivative().toString());
            Console.WriteLine(f2.integral().toString());
            Console.WriteLine(f5.integral().toString());
